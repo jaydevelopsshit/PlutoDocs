@@ -21,4 +21,4 @@ This is a page that defines all the terms that will be used in the documentation
 | S64       | Signed 64 Bit Integer   |
 
 ## UUID
-<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally Unique Identifier</a>.
+<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally Unique Identifier</a>
