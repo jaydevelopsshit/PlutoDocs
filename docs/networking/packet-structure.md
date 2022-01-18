@@ -18,6 +18,8 @@ All packets and their structure in the latest Terraria release.
 
 
 ## Connect Request [1]
+{: .d-inline-block }
+
 Server
 {: .label }
 
@@ -28,6 +30,8 @@ Server
 
 
 ## Disconnect [2]
+{: .d-inline-block }
+
 Client
 {: .label }
 
@@ -38,6 +42,8 @@ Client
 
 
 ## Continue Connecting/Set User Slot [3]
+{: .d-inline-block }
+
 Client
 {: .label }
 
@@ -48,6 +54,8 @@ Client
 
 
 ## Player Info [4]
+{: .d-inline-block }
+
 Both
 {: .label }
 
