@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 # Login Sequence
-This is the normal login sequence according to vanilla protocol.
+This is an example of a normal vanilla login sequence.
 <br>
 1. Client connects to server
 2. C -> S: <a href="/TerrariaDocs/docs/networking/packet-structure#connect-request-1">Connect Request</a>
