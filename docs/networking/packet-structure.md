@@ -280,5 +280,4 @@ Client
 ## Null [15]
 Never Sent
 {: .label .label-red }
-
 **No Data**
