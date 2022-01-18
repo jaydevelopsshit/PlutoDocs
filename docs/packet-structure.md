@@ -15,15 +15,16 @@ All packets in the latest Terraria release.
 | ?    | ?    | Data                   |
 
 ## Connect Request [1]
-Client -> Server
-
+To Server
+{: .label }
 
 | Size | Type   | Description     | Notes                                                        |
 |:-----|:-------|:----------------|:-------------------------------------------------------------|
 | ?    | String | Release Version | Formatted as so: `Terraria[ReleaseNum]`, e.g. `Terraria244`. |
 
 ## Disconnect [2]
-Server -> Client
+To Client
+{: .label }
 
 
 | Size | Type   | Description       | Notes |
