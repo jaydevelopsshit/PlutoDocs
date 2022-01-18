@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Packet Structure
 parent: Networking
 nav_order: 1
