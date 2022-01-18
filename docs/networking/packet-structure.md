@@ -32,9 +32,9 @@ Client
 {: .label }
 
 
-| Size | Type         | Description       | Notes |
-|:-----|:-------------|:------------------|:------|
-| ?    | Network Text | Disconnect Reason | -     |
+| Size | Type                                                                             | Description       | Notes |
+|:-----|:---------------------------------------------------------------------------------|:------------------|:------|
+| ?    | <a href="/PlutoDocs/docs/terraria-data-structures#network-text">Network Text</a> | Disconnect Reason | -     |
 
 
 ## Continue Connecting/Set User Slot [3]
@@ -96,7 +96,7 @@ Requests that <a href="#world-info-7">World Info</a> be sent.
 
 
 ## World Info [7]
-Server
+Client
 {: .label }
 Sends a lot of information about the world and its current state.
 
@@ -180,3 +180,24 @@ Sends a lot of information about the world and its current state.
 | 1    | S8              | Invasion Type               | -                                                                                                                                                             |
 | 8    | U64             | Lobby ID                    | Always 0, except if using the Steam Social API.                                                                                                               |
 | 4    | Float           | Sandstorm Severity          | -                                                                                                                                                             |
+
+
+## Request Essential Tiles [8]
+Server
+{: .label }
+
+| Size | Type | Description    | Notes |
+|:-----|:-----|:---------------|:------|
+| 4    | S32  | Player Spawn X | -     |
+| 4    | S32  | Player Spawn Y | -     |
+
+
+## Status [9]
+Client
+{: .label }
+
+| Size | Type                                                                             | Description   | Notes                                                                                    |
+|:-----|:---------------------------------------------------------------------------------|:--------------|:-----------------------------------------------------------------------------------------|
+| 4    | S32                                                                              | Max           | Only increments.                                                                         |
+| ?    | <a href="/PlutoDocs/docs/terraria-data-structures#network-text">Network Text</a> | Text          | -                                                                                        |
+| 1    | U8                                                                               | Flags         | Bits: 1: Hide Status Percent, 2: Text Shadowed, 3: Run Check Bytes in Client Loop Thread |
