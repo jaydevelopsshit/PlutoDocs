@@ -1,8 +1,8 @@
 ---
-title: home
+title: Home
 nav-order: 1
 permalink: /
 ---
-# Pluto Documentation
+# Pluto Docs
 
-Welcome to the Pluto docs.
+Welcome to the Pluto documentation, here you can find information regarding Pluto and Terraria.
