@@ -2,7 +2,7 @@
 layout: default
 title: Packet Structure
 parent: Networking
-nav_order: 1
+nav_order: 2
 ---
 
 # Terraria Packet Structure
@@ -22,9 +22,9 @@ Server
 {: .label }
 
 
-| Size | Type   | Description     | Notes                                                        |
-|:-----|:-------|:----------------|:-------------------------------------------------------------|
-| ?    | String | Release Version | Formatted as so: `Terraria[ReleaseNum]`, e.g. `Terraria244`. |
+| Size | Type   | Description    | Notes                                                        |
+|:-----|:-------|:---------------|:-------------------------------------------------------------|
+| ?    | String | Version        | Formatted as so: `Terraria[ReleaseNum]`, e.g. `Terraria244`. |
 
 
 ## Disconnect [2]
@@ -32,9 +32,9 @@ Client
 {: .label }
 
 
-| Size | Type   | Description       | Notes |
-|:-----|:-------|:------------------|:------|
-| ?    | String | Disconnect Reason | -     |
+| Size | Type         | Description       | Notes |
+|:-----|:-------------|:------------------|:------|
+| ?    | Network Text | Disconnect Reason | -     |
 
 
 ## Continue Connecting/Set User Slot [3]
