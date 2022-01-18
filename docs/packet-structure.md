@@ -15,27 +15,29 @@ All packets in the latest Terraria release.
 | ?    | ?    | Data                   |
 
 
+## Connect Request [1]
 Server
 {: .label }
-## Connect Request [1]
+
 
 | Size | Type   | Description     | Notes                                                        |
 |:-----|:-------|:----------------|:-------------------------------------------------------------|
 | ?    | String | Release Version | Formatted as so: `Terraria[ReleaseNum]`, e.g. `Terraria244`. |
 
 
+## Disconnect [2]
 Client
 {: .label }
-## Disconnect [2]
+
 
 | Size | Type   | Description       | Notes |
 |:-----|:-------|:------------------|:------|
 | ?    | String | Disconnect Reason | -     |
 
 
+## Continue Connecting/Set User Slot [3]
 Client
 {: .label }
-## Continue Connecting/Set User Slot [3]
 
 
 | Size | Type | Description | Notes                                                                                                         |
@@ -43,9 +45,9 @@ Client
 | 1    | U8   | Player ID   | Unfortunately since the type of this is a byte, there can only be a maximum of 255 players connected at once. |
 
 
+## Player Info [4]
 Both
 {: .label }
-## Player Info [4]
 
 | Size | Type   | Description      | Notes                                                                                                                                             |
 |:-----|:-------|:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,3 +68,16 @@ Both
 | 3    | Color  | Shoe Color       | -                                                                                                                                                 |
 | 1    | U8     | Difficulty Flags | Bits: 1: Softcore, 2: Mediumcore, 3: Hardcore, 4: Extra Accessory, 5: Creative (Journey) <br> <br> Only one of the first 3 bits should be active. |
 | 3    | U8     | Torch Flags      | Bits: 1: Using Biome Torches, 2: Happy Fun Torch Time, 3: Unlocked Biome Torches.                                                                 |
+
+
+Set Player Inventory Slot [5]
+Both
+{: .label }
+
+| Size | Type | Description | Notes                                 |
+|:-----|:-----|:------------|:--------------------------------------|
+| 1    | U8   | Player ID   | -                                     |
+| 2    | S16  | Slot ID     | -                                     |
+| 2    | S16  | Stack Size  | Should never be below 1 or above 999. |
+| 1    | U8   | Item Prefix | Examples: Broken, Godly, Legendary.   |
+| 2    | S16  | Item ID     |                                       |
