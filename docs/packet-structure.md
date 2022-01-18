@@ -70,8 +70,9 @@ Both
 | 3    | U8     | Torch Flags      | Bits: 1: Using Biome Torches, 2: Happy Fun Torch Time, 3: Unlocked Biome Torches.                                                                 |
 
 
+## Set Player Inventory Slot [5]
 Both
-{: .label } ## Set Player Inventory Slot [5]
+{: .label }
 
 | Size | Type | Description | Notes                                 |
 |:-----|:-----|:------------|:--------------------------------------|
