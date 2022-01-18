@@ -182,7 +182,7 @@ Sends a lot of information about the world and its current state.
 | 4    | Float           | Sandstorm Severity          | -                                                                                                                                                             |
 
 
-## Request Essential Tiles [8]
+## Request Spawn Tiles [8]
 Server
 {: .label }
 
@@ -223,7 +223,7 @@ Client
 | ?    | -       | Tile Entities     | -                                                                                     |
 
 
-## Section Tile Frame [11]
+## Tile Section Frame [11]
 Client
 {: .label }
 
