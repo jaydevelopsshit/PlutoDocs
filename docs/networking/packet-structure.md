@@ -339,3 +339,17 @@ Both
 | 2    | S16  | Tile Y      | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | 2    | S16  | Data        | Provides necessary data for the action in this packet if it's needed. <br><br> Remove Block: (Boolean)Failed, Place Block: (S16)Block ID, Remove Wall: (Boolean)Failed, Place Wall: (S16)Wall ID, Remove Tile No Item: (Boolean)Failed, Slope Block: (S16)Slope, Replace Block: (S16)Block ID, Replace Wall: (S16)Wall ID.                                                                                                                                                         |
 | 1    | U8   | Extra Data  | Provides extra data for the action in this packet if it's needed. <br><br> Place Tile: (U8)Style, Replace Tile: (U8)Style                                                                                                                                                                                                                                                                                                                                                          |
+
+
+## Time [18]
+{: .d-inline-block }
+
+Client
+{: .label }
+
+| Size | Type    | Description | Notes |
+|:-----|:--------|:------------|:------|
+| 1    | Boolean | Day Time    | -     |
+| 4    | S32     | Time        | -     |
+| 2    | S16     | Sun Mod X   | -     |
+| 2    | S16     | Sun Mod Y   | -     |
