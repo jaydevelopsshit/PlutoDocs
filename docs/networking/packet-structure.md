@@ -314,7 +314,7 @@ Never Sent
 
 
 ## Player HP [16]
-{: .d-inline }
+{: .d-inline-block }
 
 Both
 {: .label }
