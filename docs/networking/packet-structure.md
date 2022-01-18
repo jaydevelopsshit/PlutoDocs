@@ -239,9 +239,31 @@ Client
 Server
 {: .label }
 
-| Size | Type | Description            | Notes                                                              |
-|:-----|:-----|:-----------------------|:-------------------------------------------------------------------|
-| 1    | U8   | Player ID              | -                                                                  |
-| 2    | S16  | Spawn X                | -                                                                  |
-| 4    | S32  | Respawn Time Remaining | If this is more than 0, then the player is still dead.             |
-| 1    | U8   | Context                | 0: Revived From Death, 1: Spawning Into World, 2: Recall From Item |
+| Size | Type | Description            | Notes                                                               |
+|:-----|:-----|:-----------------------|:--------------------------------------------------------------------|
+| 1    | U8   | Player ID              | -                                                                   |
+| 2    | S16  | Spawn X                | -                                                                   |
+| 4    | S32  | Respawn Time Remaining | If this is more than 0, then the player is still dead.              |
+| 1    | U8   | Context                | 0: Revived From Death, 1: Spawning Into World, 2: Recall From Item. |
+
+
+## Update Player [13]
+Server
+{: .label }
+
+| Size | Type  | Description         | Notes                                                                                                                                                                 |
+|:-----|:------|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | U8    | Player ID           | -                                                                                                                                                                     |
+| 1    | U8    | Control Flags       | Bits: 1: Up, 2: Down, 3: Left, 4: Right, 5: Jump, 6: Use Item, 7: Direction;                                                                                          |
+| 1    | U8    | Pulley Flags        | Bits: 1: Pulley Enabled, 2: Direction, 3: Update Velocity, 4: Vortex Stealth Active, 5: Gravity Direction, 6: Shield Raised.                                          |
+| 1    | U8    | Misc Flags          | Bits: 1: Hovering Up, 2: Void Vault Enabled, 3: Sitting, 4: Downed DD2 Event, 5: Petting Animal, 6: Petting Small Animal, 7: Used Potion of Return, 8: Hovering Down. |
+| 1    | U8    | Sleeping Flags      | Bits: 1: Sleeping.                                                                                                                                                    |
+| 1    | U8    | Selected Item       | Probably an inventory ID.                                                                                                                                             |
+| 4    | Float | Position X          | -                                                                                                                                                                     |
+| 4    | Float | Position Y          | -                                                                                                                                                                     |
+| 4    | Float | Velocity X          | Only sent if Update Velocity bit in Pulley Flags is active.                                                                                                           |
+| 4    | Float | Velocity Y          | Only sent if Update Velocity bit in Pulley Flags is active.                                                                                                           |
+| 4    | Float | Original Position X | Original Position X for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                         |
+| 4    | Float | Original Position Y | Original Position Y for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                         |
+| 4    | Float | Home Position X     | Home Position X for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                             |
+| 4    | Float | Home Position Y     | Home Position Y for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                             |
