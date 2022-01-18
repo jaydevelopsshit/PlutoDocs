@@ -89,10 +89,8 @@ Both
 Server
 {: .label }
 Requests that <a href="#world-info-7">World Info</a> be sent.
-
-| Size | Type | Description | Notes |
-|:-----|:-----|:------------|:------|
-|      |      |             |       |
+<br> <br>
+No Data
 
 
 ## World Info [7]
@@ -267,3 +265,20 @@ Both
 | 4    | Float | Original Position Y | Original Position Y for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                         |
 | 4    | Float | Home Position X     | Home Position X for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                             |
 | 4    | Float | Home Position Y     | Home Position Y for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                             |
+
+
+## Player Active [14]
+Client
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 1    | U8   | Player ID   |       |
+| 1    | U8   | Active      |       |
+
+
+## Null [15]
+Never Sent
+{: .label .label-red }
+<br> <br>
+No Data
