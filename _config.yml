@@ -1,9 +1,17 @@
 title: Pluto Docs
-description: >-
-  Developer documentation for Terraria and Pluto.
-baseurl: "/"
+description: Developer documentation for Terraria and Pluto.
+baseurl: "/PlutoDocs"
+url: "https://jaydevelopsshit.github.io"
 remote_theme: pmarsceill/just-the-docs
+
+color_scheme: nil
+
 back_to_top: true
 back_to_top_text: "Back to top"
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
 
 footer_content: "Pluto Project 2022"
