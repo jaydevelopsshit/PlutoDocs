@@ -5,8 +5,8 @@ parent: Networking
 nav_order: 2
 ---
 
-# Terraria Packet Structure
-All packets in the latest Terraria release.
+# Packet Structure
+All packets and their structure in the latest Terraria release.
 
 ## Basic Structure
 

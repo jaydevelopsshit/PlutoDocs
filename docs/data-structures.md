@@ -4,7 +4,7 @@ title: Terraria Data Structures
 nav_order: 3
 ---
 
-# Terraria Data Structures
+# Data Structures
 Commonly used data structures in Terraria. The tables are their structure when they are serialized for writing.
 
 ## Color
