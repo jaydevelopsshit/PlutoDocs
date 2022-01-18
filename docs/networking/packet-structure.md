@@ -86,14 +86,11 @@ Both
 
 
 ## Request World Info [6]
-
 Server
 {: .label }
-
+Requests that <a href="#world-info-7">World Info</a> be sent.
 No Data
 {: .label .label-yellow }
-
-Requests that <a href="#world-info-7">World Info</a> be sent.
 
 
 ## World Info [7]
@@ -281,10 +278,8 @@ Client
 
 
 ## Null [15]
-
 Never Sent
 {: .label .label-red }
-
-
+Null Packet
 No Data
 {: .label .label-yellow }
