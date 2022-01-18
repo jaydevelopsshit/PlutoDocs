@@ -1,7 +1,7 @@
 ---
 title: Packet Structure
 parent: Networking
-nav-order: 1
+nav_order: 1
 ---
 
 # Terraria Packet Structure
