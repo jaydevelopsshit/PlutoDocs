@@ -1,2 +1,2 @@
-# Pluto Docs
-Documentation for Pluto as well as general information regarding Terraria.
+# Terraria Docs
+Developer documentation for information regarding Terraria and its networking.
