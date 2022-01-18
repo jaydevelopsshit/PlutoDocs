@@ -15,32 +15,37 @@ All packets in the latest Terraria release.
 | ?    | ?    | Data                   |
 
 
+Server
+{: .label }
 ## Connect Request [1]
-Server {: .label }
 
 | Size | Type   | Description     | Notes                                                        |
 |:-----|:-------|:----------------|:-------------------------------------------------------------|
 | ?    | String | Release Version | Formatted as so: `Terraria[ReleaseNum]`, e.g. `Terraria244`. |
 
 
+Client
+{: .label }
 ## Disconnect [2]
-Client {: .label }
 
 | Size | Type   | Description       | Notes |
 |:-----|:-------|:------------------|:------|
 | ?    | String | Disconnect Reason | -     |
 
 
+Client
+{: .label }
 ## Continue Connecting/Set User Slot [3]
-Client {: .label }
+
 
 | Size | Type | Description | Notes                                                                                                         |
 |:-----|:-----|:------------|:--------------------------------------------------------------------------------------------------------------|
 | 1    | U8   | Player ID   | Unfortunately since the type of this is a byte, there can only be a maximum of 255 players connected at once. |
 
 
+Both
+{: .label }
 ## Player Info [4]
-Both {: .label }
 
 | Size | Type   | Description      | Notes                                                                                                                                             |
 |:-----|:-------|:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
