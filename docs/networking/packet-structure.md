@@ -201,3 +201,23 @@ Client
 | 4    | S32                                                                              | Max           | Only increments.                                                                         |
 | ?    | <a href="/PlutoDocs/docs/terraria-data-structures#network-text">Network Text</a> | Text          | -                                                                                        |
 | 1    | U8                                                                               | Flags         | Bits: 1: Hide Status Percent, 2: Text Shadowed, 3: Run Check Bytes in Client Loop Thread |
+
+
+## Send Tile Section [10]
+Client
+{: .label }
+
+| Size | Type    | Description       | Notes                                                                                 |
+|:-----|:--------|:------------------|:--------------------------------------------------------------------------------------|
+| 1    | Boolean | Compressed        | If true, the rest of the data written should be compressed via the deflate algorithm. |
+| 4    | S32     | Start X           | -                                                                                     |
+| 4    | S32     | Start Y           | -                                                                                     |
+| 2    | S16     | Width             | -                                                                                     |
+| 2    | S16     | Height            | -                                                                                     |
+| ?    | -       | Tiles             | -                                                                                     |
+| 2    | S16     | Chest Count       | -                                                                                     |
+| ?    | -       | Chests            | -                                                                                     |
+| 2    | S16     | Sign Count        | -                                                                                     |
+| ?    | -       | Signs             | -                                                                                     |
+| 2    | S16     | Tile Entity Count | -                                                                                     |
+| ?    | -       | Tile Entities     | -                                                                                     |
