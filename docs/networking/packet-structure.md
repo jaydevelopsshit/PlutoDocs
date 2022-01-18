@@ -1,6 +1,7 @@
 ---
 title: Packet Structure
-nav-order: 2
+parent: Networking
+nav-order: 1
 ---
 
 # Terraria Packet Structure
@@ -12,7 +13,7 @@ All packets in the latest Terraria release.
 |:-----|:-----|:-----------------------|
 | 2    | U16  | Packet Length In Bytes |
 | 1    | U8   | Packet ID              |
-| ?    | ?    | Data                   |
+| ?    | ?    | Packet Data            |
 
 
 ## Connect Request [1]
