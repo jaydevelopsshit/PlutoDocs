@@ -301,8 +301,8 @@ Client
 
 | Size | Type | Description | Notes |
 |:-----|:-----|:------------|:------|
-| 1    | U8   | Player ID   |       |
-| 1    | U8   | Active      |       |
+| 1    | U8   | Player ID   | -     |
+| 1    | U8   | Active      | -     |
 
 
 ## Null [15]
@@ -311,3 +311,31 @@ Client
 Never Sent
 {: .label .label-red }
 **No Data**
+
+
+# Player HP [16]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size | Type | Description | Notes                                     |
+|:-----|:-----|:------------|:------------------------------------------|
+| 1    | U8   | Player ID   | -                                         |
+| 2    | S16  | HP          | This should never be under 0 or over 600. |
+| 2    | S16  | Max HP      | This should never be under 0 or over 600. |
+
+
+# Modify Tile [17]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size | Type | Description | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|:-----|:-----|:------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | U8   | Action      | 0: Remove Block, 1: Place Block, 2: Remove Wall, 3: Place Wall, 4: Remove Tile No Item, 5: Place Red Wire, 6: Remove Red Wire, 7: Pound Block, 8: Place Actuator, 9: Remove Actuator, 10: Place Blue Wire, 11: Remove Blue Wire, 12: Place Green Wire, 13: Remove Green Wire, 14: Slope Block, 15: Frame Track, 16: Place Yellow Wire, 17: Remove Yellow Wire, 18: Poke Logic Gate, 19: Actuate, 20: Remove Block (?), 21: Replace Block, 22: Replace Wall, 23: Slope Pound Block. |
+| 2    | S16  | Tile X      | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 2    | S16  | Tile Y      | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 2    | S16  | Data        | Provides necessary data for the action in this packet if it's needed. <br><br> Remove Block: (Boolean)Failed, Place Block: (S16)Block ID, Remove Wall: (Boolean)Failed, Place Wall: (S16)Wall ID, Remove Tile No Item: (Boolean)Failed, Slope Block: (S16)Slope, Replace Block: (S16)Block ID, Replace Wall: (S16)Wall ID.                                                                                                                                                         |
+| 1    | U8   | Extra Data  | Provides extra data for the action in this packet if it's needed. <br><br> Place Tile: (U8)Style, Replace Tile: (U8)Style                                                                                                                                                                                                                                                                                                                                                          |
