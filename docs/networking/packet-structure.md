@@ -248,7 +248,7 @@ Server
 
 
 ## Update Player [13]
-Server
+Both
 {: .label }
 
 | Size | Type  | Description         | Notes                                                                                                                                                                 |
