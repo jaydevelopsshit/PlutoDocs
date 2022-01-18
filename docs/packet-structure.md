@@ -15,24 +15,24 @@ All packets in the latest Terraria release.
 | ?    | ?    | Data                   |
 
 
-Server {: .label }
 ## Connect Request [1]
+Server {: .label }
 
 | Size | Type   | Description     | Notes                                                        |
 |:-----|:-------|:----------------|:-------------------------------------------------------------|
 | ?    | String | Release Version | Formatted as so: `Terraria[ReleaseNum]`, e.g. `Terraria244`. |
 
 
-Client {: .label }
 ## Disconnect [2]
+Client {: .label }
 
 | Size | Type   | Description       | Notes |
 |:-----|:-------|:------------------|:------|
 | ?    | String | Disconnect Reason | -     |
 
 
-Client {: .label }
 ## Continue Connecting/Set User Slot [3]
+Client {: .label }
 
 | Size | Type | Description | Notes                                                                                                         |
 |:-----|:-----|:------------|:--------------------------------------------------------------------------------------------------------------|
