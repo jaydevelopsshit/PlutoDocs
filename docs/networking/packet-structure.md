@@ -221,3 +221,27 @@ Client
 | ?    | -       | Signs             | -                                                                                     |
 | 2    | S16     | Tile Entity Count | -                                                                                     |
 | ?    | -       | Tile Entities     | -                                                                                     |
+
+
+## Section Tile Frame [11]
+Client
+{: .label }
+
+| Size | Type | Description     | Notes |
+|:-----|:-----|:----------------|:------|
+| 2    | S16  | Start Section X | -     |
+| 2    | S16  | Start Section Y | -     |
+| 2    | S16  | End Section X   | -     |
+| 2    | S16  | End Section Y   | -     |
+
+
+## Spawn Player [12]
+Server
+{: .label }
+
+| Size | Type | Description            | Notes                                                              |
+|:-----|:-----|:-----------------------|:-------------------------------------------------------------------|
+| 1    | U8   | Player ID              | -                                                                  |
+| 2    | S16  | Spawn X                | -                                                                  |
+| 4    | S32  | Respawn Time Remaining | If this is more than 0, then the player is still dead.             |
+| 1    | U8   | Context                | 0: Revived From Death, 1: Spawning Into World, 2: Recall From Item |
