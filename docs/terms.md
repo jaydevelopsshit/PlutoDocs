@@ -8,6 +8,7 @@ nav_order: 2
 This is a page that defines all the terms that will be used in the documentation.
 
 ## Primitive Types
+
 | Shorthand | Type                    |
 |:----------|:------------------------|
 | U8        | Unsigned 8 Bit Integer  |
