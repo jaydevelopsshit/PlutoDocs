@@ -66,8 +66,8 @@ Both
 | 1    | U8     | Hair             | -                                                                                                                                                 |
 | ?    | String | Player Name      | -                                                                                                                                                 |
 | 1    | U8     | Hair Dye         | -                                                                                                                                                 |
-| 1    | U8     | Hide Visuals     | Not sure what this does                                                                                                                           |
-| 1    | U8     | Hide Visuals 2   | Not sure what this does                                                                                                                           |
+| 1    | U8     | Hide Visuals     | -                                                                                                                                                 |
+| 1    | U8     | Hide Visuals 2   | -                                                                                                                                                 |
 | 1    | U8     | Hide Misc        | -                                                                                                                                                 |
 | 3    | Color  | Hair Color       | -                                                                                                                                                 |
 | 3    | Color  | Skin Color       | -                                                                                                                                                 |

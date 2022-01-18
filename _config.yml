@@ -14,4 +14,4 @@ kramdown:
     block:
       line_numbers: false
 
-footer_content: "Copyright Pluto Project 2022"
+footer_content: "Copyright &copy; Pluto Project 2022"
