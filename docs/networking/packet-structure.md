@@ -81,6 +81,8 @@ Both
 
 
 ## Set Player Inventory Slot [5]
+{: .d-inline-block }
+
 Both
 {: .label }
 
@@ -94,6 +96,8 @@ Both
 
 
 ## Request World Info [6]
+{: .d-inline-block }
+
 Server
 {: .label }
 Requests that <a href="#world-info-7">World Info</a> be sent.
@@ -102,6 +106,8 @@ Requests that <a href="#world-info-7">World Info</a> be sent.
 
 
 ## World Info [7]
+{: .d-inline-block }
+
 Client
 {: .label }
 Sends a lot of information about the world and its current state.
@@ -189,6 +195,8 @@ Sends a lot of information about the world and its current state.
 
 
 ## Request Spawn Tiles [8]
+{: .d-inline-block }
+
 Server
 {: .label }
 
@@ -199,6 +207,8 @@ Server
 
 
 ## Status [9]
+{: .d-inline-block }
+
 Client
 {: .label }
 
@@ -210,6 +220,8 @@ Client
 
 
 ## Send Tile Section [10]
+{: .d-inline-block }
+
 Client
 {: .label }
 
@@ -230,6 +242,8 @@ Client
 
 
 ## Tile Section Frame [11]
+{: .d-inline-block }
+
 Client
 {: .label }
 
@@ -242,6 +256,8 @@ Client
 
 
 ## Spawn Player [12]
+{: .d-inline-block }
+
 Server
 {: .label }
 
@@ -254,6 +270,8 @@ Server
 
 
 ## Update Player [13]
+{: .d-inline-block }
+
 Both
 {: .label }
 
@@ -276,6 +294,8 @@ Both
 
 
 ## Player Active [14]
+{: .d-inline-block }
+
 Client
 {: .label }
 
@@ -286,6 +306,8 @@ Client
 
 
 ## Null [15]
+{: .d-inline-block }
+
 Never Sent
 {: .label .label-red }
 **No Data**
