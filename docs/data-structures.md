@@ -21,7 +21,7 @@ Examples: Character selection colors like hair color, shirt color, shoe color, e
 ## Network Text
 Represents text sent over the network. It can be either literal (raw text), formattable, or a localization key (translatable).
 <br> <br>
-Example: <a href="/PlutoDocs/docs/networking/packet-structure#disconnect-2">Disconnect Packet</a>'s reason.
+Example: <a href="/TerrariaDocs/docs/networking/packet-structure#disconnect-2">Disconnect Packet</a>'s reason.
 
 | Size | Type              | Description          | Notes                                                            |
 |:-----|:------------------|:---------------------|:-----------------------------------------------------------------|

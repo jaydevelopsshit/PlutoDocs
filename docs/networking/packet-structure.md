@@ -32,9 +32,9 @@ Client
 {: .label }
 
 
-| Size | Type                                                                             | Description       | Notes |
-|:-----|:---------------------------------------------------------------------------------|:------------------|:------|
-| ?    | <a href="/PlutoDocs/docs/terraria-data-structures#network-text">Network Text</a> | Disconnect Reason | -     |
+| Size | Type                                                                               | Description       | Notes |
+|:-----|:-----------------------------------------------------------------------------------|:------------------|:------|
+| ?    | <a href="/TerrariaDocs/docs/data-structures#network-text">Network Text</a>         | Disconnect Reason | -     |
 
 
 ## Continue Connecting/Set User Slot [3]
@@ -196,11 +196,11 @@ Server
 Client
 {: .label }
 
-| Size | Type                                                                             | Description   | Notes                                                                                    |
-|:-----|:---------------------------------------------------------------------------------|:--------------|:-----------------------------------------------------------------------------------------|
-| 4    | S32                                                                              | Max           | Only increments.                                                                         |
-| ?    | <a href="/PlutoDocs/docs/terraria-data-structures#network-text">Network Text</a> | Text          | -                                                                                        |
-| 1    | U8                                                                               | Flags         | Bits: 1: Hide Status Percent, 2: Text Shadowed, 3: Run Check Bytes in Client Loop Thread |
+| Size | Type                                                                               | Description   | Notes                                                                                    |
+|:-----|:-----------------------------------------------------------------------------------|:--------------|:-----------------------------------------------------------------------------------------|
+| 4    | S32                                                                                | Max           | Only increments.                                                                         |
+| ?    | <a href="/TerrariaDocs/docs/data-structures#network-text">Network Text</a>         | Text          | -                                                                                        |
+| 1    | U8                                                                                 | Flags         | Bits: 1: Hide Status Percent, 2: Text Shadowed, 3: Run Check Bytes in Client Loop Thread |
 
 
 ## Send Tile Section [10]
