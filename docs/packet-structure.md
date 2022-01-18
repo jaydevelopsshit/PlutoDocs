@@ -7,11 +7,11 @@ nav-order: 2
 All packets in the latest Terraria release.
 
 ## Basic Structure
-| Size | Description            | Type |
-|:-----|:-----------------------|:-----|
-| 2    | Packet Length In Bytes | U16  |
-| 1    | Packet ID              | U8   |
-| ?    | Data                   | ?    |
+| Size | Type | Description            |
+|:-----|:-----|:-----------------------|
+| 2    | U16  | Packet Length In Bytes |
+| 1    | U8   | Packet ID              |
+| ?    | ?    | Data                   |
 
 ## Connect Request [1]
 Client -> Server
