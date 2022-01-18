@@ -2,7 +2,6 @@ title: Pluto Docs
 description: >-
   Developer documentation for Terraria and Pluto.
 baseurl: "/"
-url: "pluto.github.io"
 remote_theme: pmarsceill/just-the-docs
 back_to_top: true
 back_to_top_text: "Back to top"
