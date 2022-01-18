@@ -313,7 +313,7 @@ Never Sent
 **No Data**
 
 
-# Player HP [16]
+## Player HP [16]
 {: .d-inline-block }
 
 Both
@@ -326,7 +326,7 @@ Both
 | 2    | S16  | Max HP      | This should never be under 0 or over 600. |
 
 
-# Modify Tile [17]
+## Modify Tile [17]
 {: .d-inline-block }
 
 Both
