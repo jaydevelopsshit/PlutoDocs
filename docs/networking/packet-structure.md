@@ -367,3 +367,17 @@ Both
 | 2    | S16  | Tile X      | -                                                                                                                                                                                                                                          |
 | 2    | S16  | Tile Y      | -                                                                                                                                                                                                                                          |
 | 1    | U8   | Direction   | If the `Action` relates to trapdoors, a value of 1 means the player is above the trapdoor. Otherwise, if the `Action` is `Open Door` then a value of -1 means the door should open to the left, 1 means the door should open to the right. |
+
+## Send Tile Square [20]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size | Type | Description      | Notes                           |
+|:-----|:-----|:-----------------|:--------------------------------|
+| 2    | U16  | Size             | -                               |
+| 1    | U8   | Tile Change Type | Only if `(Size & 0x8000) != 0`. |
+| 2    | S16  | Tile X           | -                               |
+| 2    | S16  | Tile Y           | -                               |
+| ?    | -    | Tiles            | -                               |
