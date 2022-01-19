@@ -86,13 +86,13 @@ Both
 Both
 {: .label }
 
-| Size | Type | Description | Notes                                 |
-|:-----|:-----|:------------|:--------------------------------------|
-| 1    | U8   | Player ID   | -                                     |
-| 2    | S16  | Slot ID     | -                                     |
-| 2    | S16  | Stack Size  | Should never be below 1 or above 999. |
-| 1    | U8   | Item Prefix | Examples: Broken, Godly, Legendary.   |
-| 2    | S16  | Item ID     | -                                     |
+| Size | Type | Description | Notes                                      |
+|:-----|:-----|:------------|:-------------------------------------------|
+| 1    | U8   | Player ID   | -                                          |
+| 2    | S16  | Slot Index  | -                                          |
+| 2    | S16  | Stack Size  | This should never be below 1 or above 999. |
+| 1    | U8   | Item Prefix | Examples: Broken, Godly, Legendary.        |
+| 2    | S16  | Item ID     | -                                          |
 
 
 ## Request World Info [6]
@@ -381,3 +381,21 @@ Both
 | 2    | S16  | Tile X           | -                               |
 | 2    | S16  | Tile Y           | -                               |
 | ?    | -    | Tiles            | -                               |
+
+## Update Item Drop [21]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size | Type  | Description | Notes                                                     |
+|:-----|:------|:------------|:----------------------------------------------------------|
+| 2    | S16   | Slot Index  | If this is below 400 and `Item ID` is 0 then this is air. |
+| 4    | Float | Position X  | -                                                         |
+| 4    | Float | Position Y  | -                                                         |
+| 4    | Float | Velocity X  | -                                                         |
+| 4    | Float | Velocity Y  | -                                                         |
+| 2    | S16   | Stack Size  | This should never be below 1 or above 999.                |
+| 1    | U8    | Item Prefix | -                                                         |
+| 1    | U8    | No Delay    | -                                                         |
+| 2    | S16   | Item ID     | -                                                         |
