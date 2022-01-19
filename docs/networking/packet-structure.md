@@ -285,12 +285,12 @@ Both
 | 1    | U8    | Selected Item       | Probably an inventory ID.                                                                                                                                             |
 | 4    | Float | Position X          | -                                                                                                                                                                     |
 | 4    | Float | Position Y          | -                                                                                                                                                                     |
-| 4    | Float | Velocity X          | Only sent if Update Velocity bit in Pulley Flags is active.                                                                                                           |
-| 4    | Float | Velocity Y          | Only sent if Update Velocity bit in Pulley Flags is active.                                                                                                           |
-| 4    | Float | Original Position X | Original Position X for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                         |
-| 4    | Float | Original Position Y | Original Position Y for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                         |
-| 4    | Float | Home Position X     | Home Position X for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                             |
-| 4    | Float | Home Position Y     | Home Position Y for Potion of Return, only sent if the Used Potion of Return bit in Misc Flags is active.                                                             |
+| 4    | Float | Velocity X          | Only sent if the `Update Velocity` bit in `Pulley Flags` is active.                                                                                                   |
+| 4    | Float | Velocity Y          | Only sent if the `Update Velocity` bit in `Pulley Flags` is active.                                                                                                   |
+| 4    | Float | Original Position X | Original Position X for Potion of Return, only sent if the `Used Potion of Return` bit in `Misc Flags` is active.                                                     |
+| 4    | Float | Original Position Y | Original Position Y for Potion of Return, only sent if the `Used Potion of Return` bit in `Misc Flags` is active.                                                     |
+| 4    | Float | Home Position X     | Home Position X for Potion of Return, only sent if the `Used Potion of Return` bit in `Misc Flags` active.                                                            |
+| 4    | Float | Home Position Y     | Home Position Y for Potion of Return, only sent if the `Used Potion of Return` bit in `Misc Flags` is active.                                                         |
 
 
 ## Player Active [14]
@@ -353,3 +353,17 @@ Client
 | 4    | S32     | Time        | -     |
 | 2    | S16     | Sun Mod X   | -     |
 | 2    | S16     | Sun Mod Y   | -     |
+
+
+## Door Toggle [19]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size | Type | Description | Notes                                                                                                                                                                                                                |
+|:-----|:-----|:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | U8   | Action      | 0: Open Door, 1: Close Door, 2: Open Trapdoor, 3: Close Trapdoor, 4: Open Tall Gate, 5: Close Tall Gate.                                                                                                             |
+| 2    | S16  | Tile X      | -                                                                                                                                                                                                                    |
+| 2    | S16  | Tile Y      | -                                                                                                                                                                                                                    |
+| 1    | U8   | Direction   | If the `Action` relates to trapdoors, a value of 1 means the player is above the trapdoor. If the `Action` is `Open Door` then -1 means the door should open to the left, 1 means the door should open to the right. |
