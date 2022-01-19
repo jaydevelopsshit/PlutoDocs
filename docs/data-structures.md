@@ -14,9 +14,9 @@ Examples: Character selection colors like hair color, shirt color, shoe color, e
 
 | Size | Type | Description | Notes |
 |:-----|:-----|:------------|:------|
-| 1    | U8   | Red         |       | 
-| 1    | U8   | Green       |       |
-| 1    | U8   | Blue        |       |
+| 1    | U8   | Red         | -     | 
+| 1    | U8   | Green       | -     |
+| 1    | U8   | Blue        | -     |
 
 ## Network Text
 Represents text sent over the network. It can be either literal (raw text), formattable, or a localization key (translatable).
