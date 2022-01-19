@@ -361,9 +361,9 @@ Client
 Both
 {: .label }
 
-| Size | Type | Description | Notes                                                                                                                                                                                                                |
-|:-----|:-----|:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | U8   | Action      | 0: Open Door, 1: Close Door, 2: Open Trapdoor, 3: Close Trapdoor, 4: Open Tall Gate, 5: Close Tall Gate.                                                                                                             |
-| 2    | S16  | Tile X      | -                                                                                                                                                                                                                    |
-| 2    | S16  | Tile Y      | -                                                                                                                                                                                                                    |
-| 1    | U8   | Direction   | If the `Action` relates to trapdoors, a value of 1 means the player is above the trapdoor. If the `Action` is `Open Door` then -1 means the door should open to the left, 1 means the door should open to the right. |
+| Size | Type | Description | Notes                                                                                                                                                                                                                                      |
+|:-----|:-----|:------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | U8   | Action      | 0: Open Door, 1: Close Door, 2: Open Trapdoor, 3: Close Trapdoor, 4: Open Tall Gate, 5: Close Tall Gate.                                                                                                                                   |
+| 2    | S16  | Tile X      | -                                                                                                                                                                                                                                          |
+| 2    | S16  | Tile Y      | -                                                                                                                                                                                                                                          |
+| 1    | U8   | Direction   | If the `Action` relates to trapdoors, a value of 1 means the player is above the trapdoor. Otherwise, if the `Action` is `Open Door` then a value of -1 means the door should open to the left, 1 means the door should open to the right. |
