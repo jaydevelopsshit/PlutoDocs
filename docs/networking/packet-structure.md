@@ -92,7 +92,7 @@ Both
 | 2    | S16  | Slot ID     | -                                     |
 | 2    | S16  | Stack Size  | Should never be below 1 or above 999. |
 | 1    | U8   | Item Prefix | Examples: Broken, Godly, Legendary.   |
-| 2    | S16  | Item ID     |                                       |
+| 2    | S16  | Item ID     | -                                     |
 
 
 ## Request World Info [6]
