@@ -453,3 +453,19 @@ Both (Sync)
 |:-----|:-----|:------------|:------|
 | 2    | S16  | Entity UID  | -     |
 | 1    | U8   | Player UID  | -     |
+
+
+## Null [25]
+{: .d-inline-block }
+
+Never Sent
+{: .label .label-red }
+**No Data**
+
+
+## Null [26]
+{: .d-inline-block }
+
+Never Sent
+{: .label .label-red }
+**No Data**
