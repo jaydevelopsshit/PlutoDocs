@@ -56,7 +56,7 @@ Client
 ## Player Info [4]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type   | Description      | Notes                                                                                                                                              |
@@ -83,7 +83,7 @@ Both
 ## Set Player Inventory Slot [5]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type | Description | Notes                                      |
@@ -272,7 +272,7 @@ Server
 ## Update Player [13]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type  | Description         | Notes                                                                                                                                                                 |
@@ -316,7 +316,7 @@ Never Sent
 ## Player HP [16]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type | Description | Notes                                     |
@@ -329,7 +329,7 @@ Both
 ## Modify Tile [17]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type | Description | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -358,7 +358,7 @@ Client
 ## Door Toggle [19]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type | Description | Notes                                                                                                                                                                                                                                      |
@@ -372,7 +372,7 @@ Both
 ## Send Tile Square [20]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type | Description      | Notes                           |
@@ -387,7 +387,7 @@ Both
 ## Update Item Drop [21]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type  | Description | Notes                                                     |
@@ -406,19 +406,19 @@ Both
 ## Update Item Owner [22]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size | Type | Description | Notes |
 |:-----|:-----|:------------|:------|
 | 2    | S16  | Item UID    | -     |
-| 1    | U8   | Player ID   | -     |
+| 1    | U8   | Player UID  | -     |
 
 
 ## Entity Update [23]
 {: .d-inline-block }
 
-Both
+Both (Sync)
 {: .label }
 
 | Size  | Type       | Description         | Notes                                                                                                                               |
@@ -441,3 +441,15 @@ Both
 | 1     | U8         | HP Bytes            | Size of `HP` in bytes. Only sent if the `Max HP` flag in `Entity Flags 1` is inactive.                                              |
 | 1/2/4 | S8/S16/S32 | HP                  | Either a S8, S16, or S32 according to `HP Bytes`. Only sent if the `Max HP` flag in `Entity Flags 1` is inactive.                   |
 | 1     | U8         | Release Owner       | This is a player UID. Only sent if this entity is catchable (fishing).                                                              |
+
+
+## Strike Entity with Held Item [24]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 2    | S16  | Entity UID  | -     |
+| 1    | U8   | Player UID  | -     |
