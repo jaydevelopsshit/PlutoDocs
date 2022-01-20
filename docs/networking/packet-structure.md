@@ -50,7 +50,7 @@ Client
 
 | Size | Type | Description | Notes                                                                                                         |
 |:-----|:-----|:------------|:--------------------------------------------------------------------------------------------------------------|
-| 1    | U8   | Player ID   | Unfortunately since the type of this is a byte, there can only be a maximum of 255 players connected at once. |
+| 1    | U8   | Player UID  | Unfortunately since the type of this is a byte, there can only be a maximum of 255 players connected at once. |
 
 
 ## Player Info [4]
@@ -61,7 +61,7 @@ Both
 
 | Size | Type   | Description      | Notes                                                                                                                                              |
 |:-----|:-------|:-----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | U8     | Player ID        | -                                                                                                                                                  |
+| 1    | U8     | Player UID       | -                                                                                                                                                  |
 | 1    | U8     | Skin Variant     | -                                                                                                                                                  |
 | 1    | U8     | Hair             | -                                                                                                                                                  |
 | ?    | String | Player Name      | -                                                                                                                                                  |
@@ -88,11 +88,11 @@ Both
 
 | Size | Type | Description | Notes                                      |
 |:-----|:-----|:------------|:-------------------------------------------|
-| 1    | U8   | Player ID   | -                                          |
+| 1    | U8   | Player UID  | -                                          |
 | 2    | S16  | Slot Index  | -                                          |
 | 2    | S16  | Stack Size  | This should never be below 1 or above 999. |
 | 1    | U8   | Item Prefix | -                                          |
-| 2    | S16  | Item ID     | -                                          |
+| 2    | S16  | Item Net ID | -                                          |
 
 
 ## Request World Info [6]
@@ -263,7 +263,7 @@ Server
 
 | Size | Type | Description            | Notes                                                               |
 |:-----|:-----|:-----------------------|:--------------------------------------------------------------------|
-| 1    | U8   | Player ID              | -                                                                   |
+| 1    | U8   | Player UID             | -                                                                   |
 | 2    | S16  | Spawn X                | -                                                                   |
 | 4    | S32  | Respawn Time Remaining | If this is more than 0, then the player is still dead.              |
 | 1    | U8   | Context                | 0: Revived From Death, 1: Spawning Into World, 2: Recall From Item. |
@@ -277,7 +277,7 @@ Both
 
 | Size | Type  | Description         | Notes                                                                                                                                                                 |
 |:-----|:------|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | U8    | Player ID           | -                                                                                                                                                                     |
+| 1    | U8    | Player UID          | -                                                                                                                                                                     |
 | 1    | U8    | Control Flags       | Bits: 1: Up, 2: Down, 3: Left, 4: Right, 5: Jump, 6: Use Item, 7: Direction;                                                                                          |
 | 1    | U8    | Pulley Flags        | Bits: 1: Pulley Enabled, 2: Direction, 3: Update Velocity, 4: Vortex Stealth Active, 5: Gravity Direction, 6: Shield Raised.                                          |
 | 1    | U8    | Misc Flags          | Bits: 1: Hovering Up, 2: Void Vault Enabled, 3: Sitting, 4: Downed DD2 Event, 5: Petting Animal, 6: Petting Small Animal, 7: Used Potion of Return, 8: Hovering Down. |
@@ -301,7 +301,7 @@ Client
 
 | Size | Type | Description | Notes |
 |:-----|:-----|:------------|:------|
-| 1    | U8   | Player ID   | -     |
+| 1    | U8   | Player UID  | -     |
 | 1    | U8   | Active      | -     |
 
 
@@ -321,7 +321,7 @@ Both
 
 | Size | Type | Description | Notes                                     |
 |:-----|:-----|:------------|:------------------------------------------|
-| 1    | U8   | Player ID   | -                                         |
+| 1    | U8   | Player UID  | -                                         |
 | 2    | S16  | HP          | This should never be under 0 or over 600. |
 | 2    | S16  | Max HP      | This should never be under 0 or over 600. |
 
@@ -400,7 +400,7 @@ Both
 | 2    | S16   | Stack Size  | This should never be below 1 or above 999.                |
 | 1    | U8    | Item Prefix | -                                                         |
 | 1    | U8    | No Delay    | -                                                         |
-| 2    | S16   | Item ID     | -                                                         |
+| 2    | S16   | Item Net ID | -                                                         |
 
 
 ## Update Item Owner [22]
@@ -413,3 +413,31 @@ Both
 |:-----|:-----|:------------|:------|
 | 2    | S16  | Item UID    | -     |
 | 1    | U8   | Player ID   | -     |
+
+
+## Entity Update [23]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size  | Type       | Description         | Notes                                                                                                                               |
+|:------|:-----------|:--------------------|:------------------------------------------------------------------------------------------------------------------------------------|
+| 2     | S16        | Entity UID          | -                                                                                                                                   |
+| 4     | Float      | Position X          | -                                                                                                                                   |
+| 4     | Float      | Position Y          | -                                                                                                                                   |
+| 4     | Float      | Velocity X          | -                                                                                                                                   |
+| 4     | Float      | Velocity Y          | -                                                                                                                                   |
+| 2     | U16        | Target              | This a player UID.                                                                                                                  |
+| 1     | U8         | Entity Flags 1      | Bits: 1: Direction, 2: Direction Y, 3: Entity AI 1, 4: Entity AI 2, 5: Entity AI 3, 6: Entity AI 4, 7: Sprite Direction, 8: Max HP. |
+| 1     | U8         | Entity Flags 2      | Bits: 1: Stats Scaled, 2: Spawned From Statue, 3: Strength Multiplier.                                                              |
+| 4     | Float      | Entity AI 1         | Only sent if the `Entity AI 1` flag in `Entity Flags 1` is active.                                                                  |
+| 4     | Float      | Entity AI 2         | Only sent if the `Entity AI 2` flag in `Entity Flags 1` is active.                                                                  |
+| 4     | Float      | Entity AI 3         | Only sent if the `Entity AI 3` flag in `Entity Flags 1` is active.                                                                  |
+| 4     | Float      | Entity AI 4         | Only sent if the `Entity AI 4` flag in `Entity Flags 1` is active.                                                                  |
+| 2     | S16        | Entity Net ID       | -                                                                                                                                   |
+| 1     | U8         | Player Count        | Used to scale the entity's stats if the difficulty is expert or master. Only sent if the `Stats Scaled` flag in `Entity Flags 2`.   |
+| 4     | Float      | Strength Multiplier | Only sent if the `Strength Multiplier` flag in `Entity Flags 2` is active.                                                          |
+| 1     | U8         | HP Bytes            | Size of `HP` in bytes. Only sent if the `Max HP` flag in `Entity Flags 1` is inactive.                                              |
+| 1/2/4 | S8/S16/S32 | HP                  | Either a S8, S16, or S32 according to `HP Bytes`. Only sent if the `Max HP` flag in `Entity Flags 1` is inactive.                   |
+| 1     | U8         | Release Owner       | This is a player UID. Only sent if this entity is catchable (fishing).                                                              |
