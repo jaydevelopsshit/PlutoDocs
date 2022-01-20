@@ -368,6 +368,7 @@ Both
 | 2    | S16  | Tile Y      | -                                                                                                                                                                                                                                          |
 | 1    | U8   | Direction   | If the `Action` relates to trapdoors, a value of 1 means the player is above the trapdoor. Otherwise, if the `Action` is `Open Door` then a value of -1 means the door should open to the left, 1 means the door should open to the right. |
 
+
 ## Send Tile Square [20]
 {: .d-inline-block }
 
@@ -382,6 +383,7 @@ Both
 | 2    | S16  | Tile Y           | -                               |
 | ?    | -    | Tiles            | -                               |
 
+
 ## Update Item Drop [21]
 {: .d-inline-block }
 
@@ -390,7 +392,7 @@ Both
 
 | Size | Type  | Description | Notes                                                     |
 |:-----|:------|:------------|:----------------------------------------------------------|
-| 2    | S16   | Slot Index  | If this is below 400 and `Item ID` is 0 then this is air. |
+| 2    | S16   | Item UID    | If this is below 400 and `Item ID` is 0 then this is air. |
 | 4    | Float | Position X  | -                                                         |
 | 4    | Float | Position Y  | -                                                         |
 | 4    | Float | Velocity X  | -                                                         |
@@ -399,3 +401,15 @@ Both
 | 1    | U8    | Item Prefix | -                                                         |
 | 1    | U8    | No Delay    | -                                                         |
 | 2    | S16   | Item ID     | -                                                         |
+
+
+## Update Item Owner [22]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 2    | S16  | Item UID    | -     |
+| 1    | U8   | Player ID   | -     |

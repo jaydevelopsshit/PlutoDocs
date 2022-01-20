@@ -29,5 +29,8 @@ A Block is an object in Terraria worlds that can be interacted with physically, 
 ## Wall
 A Wall is an object in Terraria worlds that acts as a second layer behind blocks, you cannot physically interact with them, but you can place and break them, as well as put certain things on them, such as torches.
 
+## UID
+An ID that must be unique in the current context.
+
 ## UUID
 <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally Unique Identifier</a>
