@@ -493,3 +493,18 @@ Both (Sync)
 | 4    | Float | Knockback       | Only sent if the `Knockback` flag in `Flags` is active.                                                                       |
 | 2    | S16   | Original Damage | Only sent if the `Original Damage` flag in `Flags` is active.                                                                 |
 | 2    | S16   | Projectile UUID | This is not actually a Universally Unique Identifier, rather an S16. Only sent if the `UUID` flag in `Flags` is active.       |
+
+
+## Entity Strike [28]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type    | Description   | Notes |
+|:-----|:--------|:--------------|:------|
+| 2    | S16     | Entity UID    | -     |
+| 1    | S16     | Damage        | -     |
+| 4    | Float   | Knockback     | -     |
+| 1    | U8      | Hit Direction | -     |
+| 1    | Boolean | Critical      | -     |
