@@ -469,3 +469,27 @@ Never Sent
 Never Sent
 {: .label .label-red }
 **No Data**
+
+
+## Projectile Update [27]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type  | Description     | Notes                                                                                                                         |
+|:-----|:------|:----------------|:------------------------------------------------------------------------------------------------------------------------------|
+| 2    | S16   | Projectile UID  | -                                                                                                                             |
+| 4    | Float | Position X      | -                                                                                                                             |
+| 4    | Float | Position Y      | -                                                                                                                             |
+| 4    | Float | Velocity X      | -                                                                                                                             |
+| 4    | Float | Position Y      | -                                                                                                                             |
+| 1    | U8    | Owner           | This is a Player UID.                                                                                                         |
+| 2    | S16   | Projectile ID   | -                                                                                                                             |
+| 1    | U8    | Flags           | Bits: 1: AI 1, 2: AI 2, 3: Damage, 4: Knockback, 5: Original Damage, 6: UUID.                                                 |
+| 4    | Float | AI 1            | Only sent if the `AI 1` flag in `Flags` is active.                                                                            |
+| 4    | Float | AI 2            | Only sent if the `AI 2` flag in `Flags` is active.                                                                            |
+| 2    | S16   | Damage          | Only sent if the `Damage` flag in `Flags` is active.                                                                          |
+| 4    | Float | Knockback       | Only sent if the `Knockback` flag in `Flags` is active.                                                                       |
+| 2    | S16   | Original Damage | Only sent if the `Original Damage` flag in `Flags` is active.                                                                 |
+| 2    | S16   | Projectile UUID | This is not actually a Universally Unique Identifier, rather an S16. Only sent if the `UUID` flag in `Flags` is active.       |
