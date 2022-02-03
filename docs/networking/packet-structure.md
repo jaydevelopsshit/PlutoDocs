@@ -544,3 +544,33 @@ Server
 |:-----|:-----|:------------|:------|
 | 2    | S16  | Tile X      | -     |
 | 2    | S16  | Tile Y      | -     |
+
+
+## Update Chest Item [32]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 2    | S16  | Chest UID   | -     |
+| 1    | U8   | Item Slot   | -     |
+| 2    | S16  | Stack Size  | -     |
+| 1    | U8   | Prefix ID   | -     |
+| 2    | S16  | Item Net ID | -     |
+
+
+## Sync Active Chest [33]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type       | Description | Notes                            |
+|:-----|:-----------|:------------|:---------------------------------|
+| 2    | S16        | Chest UID   | -                                |
+| 2    | S16        | Chest X     | -                                |
+| 2    | S16        | Chest Y     | -                                |
+| 1    | U8         | Name Length | This should be between 0 and 20. |
+| ?    | Raw String | Name        | Read based off `Name Length`.    |
