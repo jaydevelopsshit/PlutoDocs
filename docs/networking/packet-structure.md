@@ -532,3 +532,15 @@ Both (Sync)
 |:-----|:--------|:------------|:------|
 | 1    | S16     | Player UID  | -     |
 | 1    | Boolean | PVP Enabled | -     |
+
+
+## Open Chest [31]
+{: .d-inline-block }
+
+Server
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 2    | S16  | Tile X      | -     |
+| 2    | S16  | Tile Y      | -     |
