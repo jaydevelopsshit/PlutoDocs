@@ -212,11 +212,11 @@ Server
 Client
 {: .label }
 
-| Size | Type                                                                               | Description   | Notes                                                                                    |
-|:-----|:-----------------------------------------------------------------------------------|:--------------|:-----------------------------------------------------------------------------------------|
-| 4    | S32                                                                                | Max           | Only increments.                                                                         |
-| ?    | <a href="/TerrariaDocs/docs/data-structures#network-text">Network Text</a>         | Text          | -                                                                                        |
-| 1    | U8                                                                                 | Flags         | Bits: 1: Hide Status Percent, 2: Text Shadowed, 3: Run Check Bytes in Client Loop Thread |
+| Size | Type                                                                               | Description   | Notes                                                                                     |
+|:-----|:-----------------------------------------------------------------------------------|:--------------|:------------------------------------------------------------------------------------------|
+| 4    | S32                                                                                | Max           | Only increments.                                                                          |
+| ?    | <a href="/TerrariaDocs/docs/data-structures#network-text">Network Text</a>         | Text          | -                                                                                         |
+| 1    | U8                                                                                 | Flags         | Bits: 1: Hide Status Percent, 2: Text Shadowed, 3: Run Check Bytes in Client Loop Thread. |
 
 
 ## Send Tile Section [10]
@@ -574,3 +574,63 @@ Both (Sync)
 | 2    | S16        | Chest Y     | -                                |
 | 1    | U8         | Name Length | This should be between 0 and 20. |
 | ?    | Raw String | Name        | Read based off `Name Length`.    |
+
+
+## Place Chest [34]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size | Type | Description         | Notes                                                                                                               |
+|:-----|:-----|:--------------------|:--------------------------------------------------------------------------------------------------------------------|
+| 1    | U8   | Action              | Bits: 1: Place Chest, 2: Kill Chest, 3: Place Dresser, 4: Kill Dresser, 5: Place Containers 2, 6: Kill Container 2. |
+| 2    | S16  | Tile X              | -                                                                                                                   |
+| 2    | S16  | Tile Y              | -                                                                                                                   |
+| 2    | S16  | Style               | -                                                                                                                   |
+| 2    | S16  | Chest ID to destroy | ID if client is receiving packet, otherwise 0.                                                                      |
+
+
+## Heal Effect [35]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 1    | U8   | Player UID  | -     |
+| 2    | S16  | Heal Amount | -     |
+
+
+## Player Zone [36]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type | Description  | Notes                                                                                                                                                  |
+|:-----|:-----|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | U8   | Player UID   | -                                                                                                                                                      |
+| 1    | U8   | Zone Flags 1 | Bits: 1: Dungeon, 2: Corruption, 3: Holy, 4: Meteor, 5: Jungle, 6: Snow, 7: Crimson, 8: Water Candle.                                                  |
+| 1    | U8   | Zone Flags 2 | Bits: 1: Peace Candle, 2: Solar Pillar, 3: Vortex Pillar, 4: Nebula Pillar, 5: Stardust Pillar, 6: Desert, 7: Glowing Mushroom, 8: Underground Desert. |
+
+
+## Request Password [37]
+{: .d-inline-block }
+
+Server
+{: .label }
+
+**No Data**
+
+
+## Send Password [38]
+{: .d-inline-block }
+
+Client
+{: .label }
+
+| Size | Type   | Description | Notes |
+|:-----|:-------|:------------|:------|
+| ?    | String | Password    | -     | 
