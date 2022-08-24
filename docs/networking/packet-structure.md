@@ -310,6 +310,7 @@ Client
 
 Never Sent
 {: .label .label-red }
+
 **No Data**
 
 
@@ -460,6 +461,7 @@ Both (Sync)
 
 Never Sent
 {: .label .label-red }
+
 **No Data**
 
 
@@ -468,6 +470,7 @@ Never Sent
 
 Never Sent
 {: .label .label-red }
+
 **No Data**
 
 
@@ -634,3 +637,89 @@ Client
 | Size | Type   | Description | Notes |
 |:-----|:-------|:------------|:------|
 | ?    | String | Password    | -     | 
+
+
+## Remove Item Owner [39]
+{: .d-inline-block }
+
+Server
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 2    | S16  | Item Index  | -     |
+
+
+## Set Active NPC [40]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type  | Description    | Notes |
+|:-----|:------|:---------------|:------|
+| 8    | U8    | Player UID     | -     |
+| 4    | Float | Item Rotation  | -     |
+| 2    | S16   | Item Animation | -     |
+
+
+## Player Item Animation [41]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type  | Description    | Notes |
+|:-----|:------|:---------------|:------|
+| 1    | U8    | Player UID     | -     |
+| 4    | Float | Item Rotation  | -     |
+| 2    | S16   | Item Animation | -     |
+
+
+## Player Mana [42]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 1    | U8   | Player UID  | -     |
+| 2    | S16  | Mana        | -     |
+| 2    | S16  | Max Mana    | -     | 
+
+
+## Mana Effect [43]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 1    | U8   | Player UID  | -     |
+| 2    | S16  | Mana Amount | -     |
+
+
+## Null [44]
+{: .d-inline-block }
+
+Never Sent
+{: .label .label-red }
+
+**No Data**
+
+
+## Player Team [45]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 1    | U8   | Player UID  | -     |
+| 1    | U8   | Team        | -     |
+
+
+## Request Sign [46]
