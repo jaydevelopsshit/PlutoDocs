@@ -619,7 +619,7 @@ Both (Sync)
 | 1    | U8   | Zone Flags 2 | Bits: 1: Peace Candle, 2: Solar Pillar, 3: Vortex Pillar, 4: Nebula Pillar, 5: Stardust Pillar, 6: Desert, 7: Glowing Mushroom, 8: Underground Desert. |
 
 
-## Password Requried [37]
+## Password Required [37]
 {: .d-inline-block }
 
 Server
