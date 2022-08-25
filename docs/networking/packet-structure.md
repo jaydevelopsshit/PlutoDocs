@@ -723,3 +723,51 @@ Both (Sync)
 
 
 ## Request Sign [46]
+{: .d-inline-block }
+
+Client
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 2    | S16  | X           | -     |
+| 2    | S16  | Y           | -     |
+
+
+## Update Sign [47]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type   | Description | Notes |
+|:-----|:-------|:------------|:------|
+| 2    | S16    | Sign UID    | -     |
+| 2    | S16    | X           | -     |
+| 2    | S16    | Y           | -     |
+| ?    | String | Text        | -     |
+| 1    | U8     | Player UID  | -     |
+| 1    | U8     | Sign Flags  | TODO  |
+
+
+## Set Liquid [48]
+{: .d-inline-block }
+
+Both (Sync)
+{: .label }
+
+| Size | Type | Description | Notes |
+|:-----|:-----|:------------|:------|
+| 2    | S16  | X           | -     |
+| 2    | S16  | Y           | -     |
+| 1    | U8   | Liquid      | -     |
+| 1    | U8   | Liquid Type | -     |
+
+
+## Complete Connection And Spawn [49]
+{: .d-inline-block }
+
+Server
+{: .label }
+
+**No Data**
