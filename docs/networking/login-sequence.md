@@ -10,8 +10,8 @@ This is an example of a normal vanilla login sequence.
 <br>
 1. Client connects to server
 2. C -> S: <a href="/TerrariaDocs/docs/networking/packet-structure#connect-request-1">Connect Request</a>
-3. S -> C: Password Required (Optional)
-4. C -> S: Password Send (Optional)
+3. S -> C: <a href="/TerrariaDocs/docs/networking/packet-structure#password-required-37">Password Required</a> (Optional)
+4. C -> S: <a href="/TerrariaDocs/docs/networking/packet-structure#password-send-38">Password Send</a> (Optional)
 5. S -> C: <a href="/TerrariaDocs/docs/networking/packet-structure#continue-connectingset-user-slot-3">Continue Connecting</a>
 6. C -> S: <a href="/TerrariaDocs/docs/networking/packet-structure#player-info-4">Player Info</a>
 7. C -> S: Client UUID
