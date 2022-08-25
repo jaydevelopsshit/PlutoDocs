@@ -23,5 +23,4 @@ This is an example of a normal vanilla login sequence.
 13. S -> C: <a href="/TerrariaDocs/docs/networking/packet-structure#world-info-7">World Info</a>
 14. C -> S: <a href="/TerrariaDocs/docs/networking/packet-structure#request-spawn-tiles-8">Request Spawn Tiles</a>
 15. S -> C: Send spawn tiles (<a href="/TerrariaDocs/docs/networking/packet-structure#send-tile-section-10">Send Tile Section</a> and <a href="/TerrariaDocs/docs/networking/packet-structure#tile-section-frame-11">Tile Section Frame</a>)
-16. S -> C: Send some world state related things (TODO: Figure this out)
-17. S -> C: <a href="/TerrariaDocs/docs/networking/packet-structure#complete-connection-and-spawn-49">Complete Connection and Spawn</a>
+16. S -> C: <a href="/TerrariaDocs/docs/networking/packet-structure#complete-connection-and-spawn-49">Complete Connection and Spawn</a>
