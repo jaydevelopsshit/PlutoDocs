@@ -1,6 +1,6 @@
-title: Terraria Docs
-description: Useful developer information for Terraria.
-baseurl: "/TerrariaDocs"
+title: Terraria Protocol Docs
+description: Useful protocol information for Terraria.
+baseurl: "/TerrariaProtocol"
 url: "https://jaydevelopsstuff.github.io"
 remote_theme: pmarsceill/just-the-docs
 
@@ -14,4 +14,4 @@ kramdown:
     block:
       line_numbers: false
 
-footer_content: "Copyright &copy; Pluto Project 2022"
+footer_content: "Copyright &copy; Pluto Project 2023"
