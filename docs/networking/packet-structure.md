@@ -48,9 +48,10 @@ Client
 {: .label }
 
 
-| Size | Type | Description | Notes                                                                                                         |
-|:-----|:-----|:------------|:--------------------------------------------------------------------------------------------------------------|
-| 1    | U8   | Player UID  | Unfortunately since the type of this is a byte, there can only be a maximum of 255 players connected at once. |
+| Size | Type    | Description           | Notes                                                                                                         |
+|:-----|:--------|:----------------------|:--------------------------------------------------------------------------------------------------------------|
+| 1    | U8      | Player UID            | Unfortunately since the type of this is a byte, there can only be a maximum of 255 players connected at once. |
+| 1    | Boolean | ServerSpecialFlags[3] | ServerWantsToRunCheckBytesInClientLoopThread                                                                  |
 
 
 ## Player Info [4]
@@ -59,25 +60,26 @@ Client
 Both (Sync)
 {: .label }
 
-| Size | Type   | Description      | Notes                                                                                                                                              |
-|:-----|:-------|:-----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | U8     | Player UID       | -                                                                                                                                                  |
-| 1    | U8     | Skin Variant     | -                                                                                                                                                  |
-| 1    | U8     | Hair             | -                                                                                                                                                  |
-| ?    | String | Player Name      | -                                                                                                                                                  |
-| 1    | U8     | Hair Dye         | -                                                                                                                                                  |
-| 1    | U8     | Hide Visuals     | -                                                                                                                                                  |
-| 1    | U8     | Hide Visuals 2   | -                                                                                                                                                  |
-| 1    | U8     | Hide Misc        | -                                                                                                                                                  |
-| 3    | Color  | Hair Color       | -                                                                                                                                                  |
-| 3    | Color  | Skin Color       | -                                                                                                                                                  |
-| 3    | Color  | Eye Color        | -                                                                                                                                                  |
-| 3    | Color  | Shirt Color      | -                                                                                                                                                  |
-| 3    | Color  | Undershirt Color | -                                                                                                                                                  |
-| 3    | Color  | Pants Color      | -                                                                                                                                                  |
-| 3    | Color  | Shoe Color       | -                                                                                                                                                  |
-| 1    | U8     | Difficulty Flags | Bits: 1: Softcore, 2: Mediumcore, 3: Hardcore, 4: Extra Accessory, 5: Creative (Journey). <br> <br> Only one of the first 3 bits should be active. |
-| 3    | U8     | Torch Flags      | Bits: 1: Using Biome Torches, 2: Happy Fun Torch Time, 3: Unlocked Biome Torches.                                                                  |
+| Size | Type   | Description      | Notes                                                                                                                                                       |
+|:-----|:-------|:-----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | U8     | Player UID       | -                                                                                                                                                           |
+| 1    | U8     | Skin Variant     | -                                                                                                                                                           |
+| 1    | U8     | Hair             | -                                                                                                                                                           |
+| ?    | String | Player Name      | -                                                                                                                                                           |
+| 1    | U8     | Hair Dye         | -                                                                                                                                                           |
+| 1    | U8     | Hide Visuals     | -                                                                                                                                                           |
+| 1    | U8     | Hide Visuals 2   | -                                                                                                                                                           |
+| 1    | U8     | Hide Misc        | -                                                                                                                                                           |
+| 3    | Color  | Hair Color       | -                                                                                                                                                           |
+| 3    | Color  | Skin Color       | -                                                                                                                                                           |
+| 3    | Color  | Eye Color        | -                                                                                                                                                           |
+| 3    | Color  | Shirt Color      | -                                                                                                                                                           |
+| 3    | Color  | Undershirt Color | -                                                                                                                                                           |
+| 3    | Color  | Pants Color      | -                                                                                                                                                           |
+| 3    | Color  | Shoe Color       | -                                                                                                                                                           |
+| 1    | U8     | Difficulty Flags | Bits: 1: Softcore, 2: Mediumcore, 3: Hardcore, 4: Extra Accessory, 5: Creative (Journey). <br> <br> Only one of the first 3 bits should be active.          |
+| 1    | U8     | Flags 2          | Bits: 1: Using Biome Torches, 2: Happy Fun Torch Time, 3: Unlocked Biome Torches, 4: Unlocked Super Cart, 5: Enabled Super Cart.                            |
+| 1    | U8     | Flags 3          | Bits: 1: Used Aegis Crystal, 2: Used Aegis Fruit, 3: Used Arcane Crystal, 4: Used Galaxy Pearl, 5: Used Gummy Worm, 6: Used Ambrosia, 7: Ate Artisan Bread. |
 
 
 ## Set Player Inventory Slot [5]
@@ -182,6 +184,11 @@ Sends a lot of information about the world and its current state.
 | 1    | U8              | Event Info 5                | -                                                                                                                                                             |
 | 1    | U8              | Event Info 6                | -                                                                                                                                                             |
 | 1    | U8              | Event Info 7                | -                                                                                                                                                             |
+| 1    | U8              | Event Info 8                | -                                                                                                                                                             |
+| 1    | U8              | Event Info 9                | -                                                                                                                                                             |
+| 1    | U8              | Event Info 10               | -                                                                                                                                                             |
+| 1    | U8              | Sundial Cooldown            | -                                                                                                                                                             |
+| 1    | U8              | Moondial Cooldown           | -                                                                                                                                                             |
 | 2    | S16             | Copper/Tin Ore Tier         | Block ID 7 (Copper) or 166 (Tin).                                                                                                                             |
 | 2    | S16             | Iron/Lead Ore Tier          | Block ID 6 (Iron) or 167 (Lead).                                                                                                                              |
 | 2    | S16             | Silver/Tungsten Ore Tier    | Block ID 9 (Silver) 168 (Tungsten).                                                                                                                           |
@@ -212,11 +219,11 @@ Server
 Client
 {: .label }
 
-| Size | Type                                                                               | Description   | Notes                                                                                     |
-|:-----|:-----------------------------------------------------------------------------------|:--------------|:------------------------------------------------------------------------------------------|
-| 4    | S32                                                                                | Max           | Only increments.                                                                          |
-| ?    | <a href="/TerrariaDocs/docs/data-structures#network-text">Network Text</a>         | Text          | -                                                                                         |
-| 1    | U8                                                                                 | Flags         | Bits: 1: Hide Status Percent, 2: Text Shadowed, 3: Run Check Bytes in Client Loop Thread. |
+| Size | Type                                                                               | Description   | Notes                                             |
+|:-----|:-----------------------------------------------------------------------------------|:--------------|:--------------------------------------------------|
+| 4    | S32                                                                                | Max           | Only increments.                                  |
+| ?    | <a href="/TerrariaDocs/docs/data-structures#network-text">Network Text</a>         | Text          | -                                                 |
+| 1    | U8                                                                                 | Flags         | Bits: 1: Hide Status Percent, 2: Text Shadowed.   |
 
 
 ## Send Tile Section [10]
@@ -241,7 +248,7 @@ Client
 | ?    | -       | Tile Entities     | -                                                                                     |
 
 
-## Tile Section Frame [11]
+## Tile Section Frame [11] (Deprecated)
 {: .d-inline-block }
 
 Client
@@ -265,6 +272,9 @@ Server
 |:-----|:-----|:-----------------------|:--------------------------------------------------------------------|
 | 1    | U8   | Player UID             | -                                                                   |
 | 2    | S16  | Spawn X                | -                                                                   |
+| 2    | S16  | Spawn Y                | -                                                                   |
+| 2    | S16  | Number of Deaths PVE   | -                                                                   |
+| 2    | S16  | Number of Deaths PVP   | -                                                                   |
 | 4    | S32  | Respawn Time Remaining | If this is more than 0, then the player is still dead.              |
 | 1    | U8   | Context                | 0: Revived From Death, 1: Spawning Into World, 2: Recall From Item. |
 
