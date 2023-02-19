@@ -781,3 +781,14 @@ Server
 {: .label }
 
 **No Data**
+
+## Player Buffs [50]
+{: .d-inline-block }
+
+Both
+{: .label }
+
+| Size | Type    | Description  | Notes |
+|:-----|:--------|:-------------|:------|
+| 1    | U8      | Player UID   | -     |
+| 88   | U16[44] | Player Buffs | -     |
